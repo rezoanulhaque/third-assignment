@@ -49,18 +49,26 @@ function brickCalculator(numberOfFloor){
 //console.log(result);
 
 function tinyFriend(params){
+    var len = friendName.length;
     var nameLenghtArray = [];
-    for(var i = 0; i < friendName.length; i++){
-        var indivisualName = friendName [i];
-        var indivisualNameLenght = indivisualName.length;
-        nameLenghtArray.push(indivisualNameLenght);
+    if(len == 0){
+        var invalidResult = "Please enter a valid Value";
+        return invalidResult;
     }
-    var minimumLenghtName = Math.min(...nameLenghtArray);
-    var indexOfName = nameLenghtArray.indexOf(minimumLenghtName);
-    var printName = (friendName[indexOfName]);
-    return printName;
+    else{
+        for(var i = 0; i < len; i++){
+            var indivisualName = friendName [i];
+            var indivisualNameLenght = indivisualName.length;
+            nameLenghtArray.push(indivisualNameLenght);
+        }
+        var minimumLenghtName = Math.min(...nameLenghtArray);
+        var indexOfName = nameLenghtArray.indexOf(minimumLenghtName);
+        var printName = (friendName[indexOfName]);
+        return printName;
+    }
 }
 //var friendName = ['anis', 'bashar', 'hubby', 'kalam', 'bhairao', 'ohago', 'khas', 'khu'] ;
+//var friendName = [];
 //var result = tinyFriend(friendName);
 //console.log(result);
 
